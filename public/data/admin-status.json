@@ -1,0 +1,17 @@
+{
+  "systemStatus": {
+    "uptime": 3600,
+    "memory": {
+      "used": 512,
+      "total": 2048
+    },
+    "cpu": {
+      "usage": 15
+    }
+  },
+  "performance": {
+    "responseTime": 150,
+    "throughput": 100
+  },
+  "uptime": 3600
+}

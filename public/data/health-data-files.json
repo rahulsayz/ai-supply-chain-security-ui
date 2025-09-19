@@ -1,0 +1,10 @@
+{
+  "filesLoaded": [
+    "threats.json",
+    "vendors.json", 
+    "analytics.json",
+    "dashboard/overview.json"
+  ],
+  "totalFiles": 4,
+  "status": "loaded"
+}

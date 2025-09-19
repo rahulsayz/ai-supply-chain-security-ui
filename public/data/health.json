@@ -1,0 +1,17 @@
+{
+  "status": "healthy",
+  "mode": "static",
+  "timestamp": "2024-01-15T10:00:00Z",
+  "dataFiles": {
+    "loaded": 4,
+    "total": 4
+  },
+  "bigquery": {
+    "connected": false
+  },
+  "memory": {
+    "used": 512,
+    "total": 2048,
+    "percentage": 25
+  }
+}

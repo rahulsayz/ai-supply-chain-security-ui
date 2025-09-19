@@ -1,0 +1,45 @@
+{
+  "threats": [
+    {
+      "id": "THR-2024-001",
+      "vendorName": "TechCorp Solutions",
+      "threatType": "Network Infiltration Attack",
+      "severity": 8,
+      "aiRiskScore": 78.5,
+      "status": "active",
+      "detectionTime": "2024-01-15T10:30:00Z",
+      "description": "🚨 BIGQUERY AI ALERT: Advanced ML algorithms detected suspicious network infiltration patterns in TechCorp's infrastructure. Multiple failed authentication attempts followed by successful login from anomalous IP ranges. Confidence: 94.7%",
+      "iocs": ["192.168.1.100", "malware.exe", "suspicious-domain.com"],
+      "similarThreats": ["THR-2024-003", "THR-2023-156"]
+    },
+    {
+      "id": "THR-2024-002",
+      "vendorName": "DataSystems Inc",
+      "threatType": "Critical Data Breach",
+      "severity": 9,
+      "aiRiskScore": 89.2,
+      "status": "investigating",
+      "detectionTime": "2024-01-15T14:22:00Z",
+      "description": "🔴 CRITICAL BIGQUERY ALERT: Unauthorized access detected to critical data repositories. Advanced ML models indicate active data exfiltration in progress. AI Confidence: 89.2% • Immediate SOC response required.",
+      "iocs": ["10.0.0.50", "backdoor.dll", "command-control.net"],
+      "similarThreats": ["THR-2024-001"]
+    },
+    {
+      "id": "THR-2024-003",
+      "vendorName": "CloudVendor Pro",
+      "threatType": "Supply Chain Attack",
+      "severity": 10,
+      "aiRiskScore": 95.7,
+      "status": "active",
+      "detectionTime": "2024-01-15T16:45:00Z",
+      "description": "🚨 MAXIMUM ALERT: Critical supply chain compromise detected by BigQuery ML threat intelligence. Malicious code injection confirmed in software distribution pipeline affecting downstream customers. SOC escalation required.",
+      "iocs": ["build-server.internal", "malicious-package.tar.gz", "evil-actor.darkweb"],
+      "similarThreats": ["THR-2024-001", "THR-2023-089"]
+    }
+  ],
+  "pagination": {
+    "total": 3,
+    "page": 1,
+    "limit": 10
+  }
+}

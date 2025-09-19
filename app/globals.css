@@ -1,0 +1,583 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    
+    /* Enterprise Security Colors - Enhanced Semantic Meaning */
+    --security-blue: 221 83% 53%;        /* Primary actions, info */
+    --security-green: 142 76% 36%;       /* Success, safe, operational */
+    --security-orange: 25 95% 53%;       /* Warnings, medium risk */
+    --security-red: 0 84% 60%;           /* Critical, danger, high risk */
+    --security-purple: 262 83% 58%;      /* AI features, advanced */
+    --security-gray: 220 13% 91%;        /* Neutral, inactive */
+    
+    /* Status-specific colors for better semantic meaning */
+    --status-operational: 142 76% 36%;    /* Green - system healthy */
+    --status-warning: 45 93% 58%;         /* Amber - attention needed */
+    --status-critical: 0 84% 60%;         /* Red - immediate action */
+    --status-info: 221 83% 53%;           /* Blue - informational */
+    --status-processing: 262 83% 58%;     /* Purple - AI processing */
+  }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    
+    /* Enterprise Security Colors - Dark Mode */
+    --security-blue: 217 91% 60%;
+    --security-green: 142 71% 45%;
+    --security-orange: 25 95% 53%;
+    --security-red: 0 84% 60%;
+    --security-purple: 262 83% 58%;
+    --security-gray: 220 13% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss04" 1, "ss05" 1, "ss06" 1, "ss07" 1, "ss08" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Enhanced Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.5;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+  
+  /* Monospace font for code and technical content */
+  code, pre, kbd, samp {
+    font-family: var(--font-jetbrains-mono), 'Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  }
+  
+  /* Improved Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+  
+  /* Selection styles */
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+  
+  ::-moz-selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+}
+
+/* Enterprise Security Animations */
+@keyframes security-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes threat-alert {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes success-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Modern Glass Morphism Effects - Enhanced for White Background */
+.glass-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass-header {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.glass-sidebar {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    4px 0 20px rgba(0, 0, 0, 0.06),
+    2px 0 8px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass-sidebar {
+  background: rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    4px 0 20px rgba(0, 0, 0, 0.3),
+    2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Component Styles with Strong Glass Effects for White Background */
+.enterprise-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .enterprise-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.enterprise-card:hover {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .enterprise-card:hover {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 6px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.security-header {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0.02) 100%);
+  @apply border-b border-border/30;
+}
+
+.threat-critical {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.08) 100%);
+  border-left: 4px solid rgba(239, 68, 68, 1);
+  animation: threat-alert 2s infinite;
+}
+
+.threat-high {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(251, 146, 60, 0.08) 100%);
+  border-left: 4px solid rgba(251, 146, 60, 1);
+}
+
+.threat-medium {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.15) 0%, rgba(234, 179, 8, 0.08) 100%);
+  border-left: 4px solid rgba(234, 179, 8, 1);
+}
+
+.threat-low {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.08) 100%);
+  border-left: 4px solid rgba(34, 197, 94, 1);
+}
+
+.stats-card {
+  @apply relative overflow-hidden;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark .stats-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.stats-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0.02) 100%);
+}
+
+.stats-card:hover::before {
+  @apply opacity-100;
+}
+
+.stats-card:hover {
+  @apply shadow-lg;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .stats-card:hover {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 6px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Loading States */
+.loading-shimmer {
+  background: linear-gradient(90deg, 
+    hsl(var(--muted)) 25%, 
+    hsl(var(--muted)/0.5) 50%, 
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced Button Styles with Better Contrast */
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%);
+  box-shadow: 0 4px 14px 0 hsl(var(--primary)/0.3);
+  border: 1px solid hsl(var(--primary)/0.8);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px 0 hsl(var(--primary)/0.4);
+  transform: translateY(-1px);
+  border: 1px solid hsl(var(--primary));
+}
+
+/* High contrast focus styles for accessibility */
+.high-contrast-focus:focus-visible {
+  @apply outline-none ring-2 ring-primary/70 ring-offset-4 ring-offset-background;
+  box-shadow: 0 0 0 2px hsl(var(--primary)/0.7), 0 0 0 6px hsl(var(--background));
+}
+
+/* Enhanced status indicators with better contrast */
+.status-indicator-critical {
+  @apply bg-red-500 text-white border-2 border-red-600;
+  box-shadow: 0 0 12px hsl(var(--status-critical)/0.4);
+}
+
+.status-indicator-warning {
+  @apply bg-yellow-500 text-yellow-900 border-2 border-yellow-600;
+  box-shadow: 0 0 12px hsl(var(--status-warning)/0.4);
+}
+
+.status-indicator-operational {
+  @apply bg-green-500 text-white border-2 border-green-600;
+  box-shadow: 0 0 12px hsl(var(--status-operational)/0.4);
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+}
+
+/* Enhanced Spacing Utilities for Better Negative Space */
+.section-spacing {
+  @apply space-y-8 lg:space-y-12;
+}
+
+.card-spacing {
+  @apply space-y-6;
+}
+
+.content-spacing {
+  @apply space-y-4;
+}
+
+.tight-spacing {
+  @apply space-y-2;
+}
+
+.loose-spacing {
+  @apply space-y-12 lg:space-y-16;
+}
+
+/* Enhanced container spacing */
+.container-padding {
+  @apply px-6 py-8 lg:px-8 lg:py-12;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .enterprise-card {
+    @apply mx-2;
+  }
+  
+  .security-header {
+    @apply px-4;
+  }
+  
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+  
+  h3 {
+    @apply text-xl;
+  }
+  
+  /* Mobile spacing adjustments */
+  .section-spacing {
+    @apply space-y-6;
+  }
+  
+  .loose-spacing {
+    @apply space-y-8;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .enterprise-card {
+    @apply shadow-none border;
+  }
+  
+  .stats-card::before {
+    display: none;
+  }
+  
+  .security-header {
+    @apply bg-white border-gray-300;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .enterprise-card {
+    @apply border-2;
+  }
+  
+  .stats-card::before {
+    @apply opacity-100;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .enterprise-card:hover {
+    transform: none;
+  }
+  
+  .stats-card:hover {
+    transform: none;
+  }
+}

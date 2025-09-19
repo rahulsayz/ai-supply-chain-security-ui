@@ -1,0 +1,43 @@
+{
+  "stats": {
+    "activeThreats": 15,
+    "avgRiskScore": 78,
+    "vendorsMonitored": 24,
+    "resolvedToday": 8
+  },
+  "executiveSummary": {
+    "title": "🤖 AI Executive Summary - Daily Security Briefing",
+    "content": "Today's security overview shows increased threat activity with a 15% spike compared to yesterday. Our BigQuery ML systems detected 3 critical vulnerabilities across vendor networks, with CloudVendor Pro showing the highest risk profile at 95.7%. Supply chain attacks have increased by 25%, requiring immediate SOC attention.",
+    "keyFindings": [
+      {
+        "type": "critical",
+        "title": "Critical Findings",
+        "description": "2 supply chain compromises detected by AI"
+      },
+      {
+        "type": "recommendation",
+        "title": "Recommendations", 
+        "description": "Immediate vendor isolation required"
+      },
+      {
+        "type": "trending",
+        "title": "AI Performance",
+        "description": "Detection accuracy: 94.2%"
+      }
+    ]
+  },
+  "recentActivity": [
+    {
+      "timestamp": "2024-01-15T16:45:00Z",
+      "type": "threat_detected",
+      "message": "Critical supply chain attack detected at CloudVendor Pro",
+      "severity": "critical"
+    },
+    {
+      "timestamp": "2024-01-15T14:22:00Z", 
+      "type": "data_breach",
+      "message": "Data breach investigation completed at DataSystems Inc",
+      "severity": "high"
+    }
+  ]
+}
