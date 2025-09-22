@@ -11,6 +11,7 @@ A modern, enterprise-ready Supply Chain Security application built with Next.js,
 ## 📋 Table of Contents
 
 - [🚀 Features](#-features)
+- [📸 Screenshots](#-screenshots)
 - [🎨 Modern UI/UX](#-modern-uiux-improvements)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [📖 Documentation](#-documentation)
@@ -181,6 +182,26 @@ NEXT_PUBLIC_WS_URL=ws://localhost:8080/ws
 - **Executive AI Briefings**: Automated executive summaries and insights
 - **Impact Metrics**: AI-calculated business impact assessments
 - **Cost Monitoring**: Real-time BigQuery AI processing cost tracking
+
+## 📸 Screenshots
+
+### Al Security Analytics Hub
+![Al Security Analytics Hub](./images/Al%20Security%20Analytics%20Hub.png)
+
+### Al Supply Chain Risk Predictor
+![Al Supply Chain Risk Predictor](./images/Al%20Supply%20Chain%20Risk%20Predictor.png)
+
+### Live BigQuery Al Analysis
+![Live BigQuery Al Analysis](./images/Live%20BigQuery%20Al%20Analysis.png)
+
+### Network Graph
+![Network Graph](./images/Network%20Graph.png)
+
+### Supply Chain Risk Assessment
+![Supply Chain Risk Assessment](./images/Supply%20Chain%20Risk%20Assessment.png)
+
+### Threat Intelligence Center
+![Threat Intelligence Center](./images/Threat%20Intelligence%20Center.png)
 
 ## 🔧 Configuration
 
